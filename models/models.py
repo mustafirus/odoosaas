@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from datetime import datetime
 
-# class odoosaas(models.Model):
-#     _name = 'odoosaas.odoosaas'
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         self.value2 = float(self.value) / 100
+class Database(models.Model):
+    _name = 'odoosaas.database'
+
+    name = fields.Char('Name', required=True)
+    partner_id = fields.Many2one('res.partner', required=True)
+    date_time = fields.Datetime('Database creation date', default=datetime.now())
+    domain = fields.Char('Domain')
