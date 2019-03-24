@@ -14,8 +14,7 @@
     <menuitem
             id="odoosaas.menu_root"
             name="Database list"
-            parent=""
-            sequence="3" />
+            sequence="400"/>
 
     <!-- menu categories -->
 
